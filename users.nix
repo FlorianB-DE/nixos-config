@@ -18,6 +18,7 @@
         steam
         vscode
         jetbrains-toolbox
+        obs-studio
       ];
     };
   };
