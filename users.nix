@@ -13,6 +13,11 @@
       packages = with pkgs; [
         librewolf
         libsForQt5.yakuake
+        gimp-with-plugins
+        discord
+        steam
+        vscode
+        jetbrains-toolbox
       ];
     };
   };
