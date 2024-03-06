@@ -12,17 +12,38 @@
       ./users.nix
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    # bootloader
+    loader = {
+      systemd-boot.editor = false;
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
 
-  boot.initrd.luks.devices."luks-b7340ab3-1536-4765-a3a5-c34920c7e847".device = "/dev/disk/by-uuid/b7340ab3-1536-4765-a3a5-c34920c7e847";
+    # splash screen on boot:
+    plymouth.enable = true;
+
+    # experimental feature to make nvidia work with plymouth
+    initrd.systemd.enable = true;
+
+    initrd.luks.devices."luks-b7340ab3-1536-4765-a3a5-c34920c7e847".device = "/dev/disk/by-uuid/b7340ab3-1536-4765-a3a5-c34920c7e847";
+
+    # Silent Boot
+    # https://wiki.archlinux.org/title/Silent_boot
+    kernelParams = [
+      "quiet"
+      "splash"
+      "vga=current"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+    ];
+    consoleLogLevel = 0;
+    # https://github.com/NixOS/nixpkgs/pull/108294
+    initrd.verbose = false;
+  };
+
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
