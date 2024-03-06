@@ -23,6 +23,18 @@
     };
   };
 
+  security.sudo.extraRules= [
+    {  
+      users = [ "florian" ];
+      commands = [
+        { 
+          command = "ALL" ;
+          options= [ "NOPASSWD" ]; # "SETENV" # Adding the following could be a good idea
+        }
+      ];
+    }
+  ];
+
   home-manager.users.florian = {
     programs.git = {
       enable = true;
