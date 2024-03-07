@@ -12,6 +12,7 @@
 
       packages = with pkgs; [
         librewolf
+        firefox
         libsForQt5.yakuake
         gimp-with-plugins
         discord
@@ -20,6 +21,7 @@
         jetbrains-toolbox
         obs-studio
         teams-for-linux
+        spotify
       ];
     };
   };

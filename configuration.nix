@@ -118,6 +118,7 @@
     git
     plymouth
     docker
+    docker-compose
   ];
 
   virtualisation.docker.enable = true;
