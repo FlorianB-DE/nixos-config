@@ -74,6 +74,9 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
+  # Enable VNC
+  services.x2goserver.enable = true;
+
   # Configure keymap in X11
   services.xserver = {
     layout = "de";
@@ -119,6 +122,11 @@
     plymouth
     docker
     docker-compose
+    vulkan-tools
+    glxinfo
+    sl
+    unzip
+    zip
   ];
 
   virtualisation.docker.enable = true;
@@ -136,7 +144,8 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
+  services.openssh.settings.PasswordAuthentication = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
