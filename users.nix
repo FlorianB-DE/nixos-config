@@ -19,6 +19,7 @@
         vscode
         jetbrains-toolbox
         obs-studio
+        teams-for-linux
       ];
     };
   };

@@ -44,6 +44,7 @@
   };
 
   networking.hostName = "nixos"; # Define your hostname.
+  networking.nameservers = [ "192.168.1.1" ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -125,6 +126,8 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  programs.ssh.startAgent = true;
 
   # List services that you want to enable:
 
