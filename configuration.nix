@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./home-manager.nix
       ./users.nix
+      ./system-libs.nix
     ];
 
   boot = {
@@ -122,14 +123,9 @@
     plymouth
     docker
     docker-compose
-    vulkan-tools
-    glxinfo
     sl
-    unzip
-    zip
     rustup
     appimage-run
-    libcap
   ];
 
   virtualisation.docker.enable = true;
