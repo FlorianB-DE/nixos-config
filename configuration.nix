@@ -127,6 +127,9 @@
     sl
     unzip
     zip
+    rustup
+    appimage-run
+    libcap
   ];
 
   virtualisation.docker.enable = true;

@@ -22,9 +22,15 @@
         obs-studio
         teams-for-linux
         spotify
+        element-desktop
+        bitwarden
       ];
     };
   };
+
+  environment.interactiveShellInit = ''
+    alias n='nvim'
+  '';
 
   security.sudo.extraRules= [
     {  
