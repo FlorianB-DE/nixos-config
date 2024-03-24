@@ -24,6 +24,7 @@
         spotify
         element-desktop
         bitwarden
+	filezilla
       ];
     };
   };

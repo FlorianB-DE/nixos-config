@@ -50,6 +50,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
@@ -126,6 +128,7 @@
     sl
     rustup
     appimage-run
+    htop
   ];
 
   virtualisation.docker.enable = true;
@@ -159,5 +162,8 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
+
+  # enable partition manager
+  programs.partition-manager.enable = true;
 
 }
