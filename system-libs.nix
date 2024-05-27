@@ -11,5 +11,6 @@
     appimage-run
     libcap
     zlib
+    qemu_kvm
   ];
 }

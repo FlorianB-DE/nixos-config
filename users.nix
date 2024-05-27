@@ -8,7 +8,7 @@
     florian = {
       isNormalUser = true;
       home = "/home/florian";
-      extraGroups = [ "wheel" "networkmanager" "docker" ];      
+      extraGroups = [ "wheel" "networkmanager" "docker" "libvirtd" ];
 
       packages = with pkgs; [
         librewolf
@@ -24,6 +24,8 @@
         spotify
         element-desktop
         bitwarden
+        evolution
+        evolution-ews
 	filezilla
       ];
     };
