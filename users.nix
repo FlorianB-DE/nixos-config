@@ -26,6 +26,7 @@
         bitwarden
         evolution
         evolution-ews
+        signal-desktop
 	filezilla
       ];
     };

@@ -131,6 +131,8 @@
     htop
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
