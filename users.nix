@@ -27,7 +27,8 @@
         evolution
         evolution-ews
         signal-desktop
-	filezilla
+        telegram-desktop
+    	filezilla
       ];
     };
   };
