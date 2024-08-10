@@ -29,6 +29,7 @@
         signal-desktop
         telegram-desktop
     	filezilla
+        vlc
       ];
     };
   };
@@ -48,6 +49,8 @@
       ];
     }
   ];
+
+  programs.direnv.enable = true;
 
   home-manager.users.florian = {
     programs.git = {
