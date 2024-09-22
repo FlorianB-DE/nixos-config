@@ -133,6 +133,8 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  programs.nix-ld.enable = true;
+
   virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
