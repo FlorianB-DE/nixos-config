@@ -30,6 +30,14 @@
         telegram-desktop
     	filezilla
         vlc
+        prismlauncher
+        kdePackages.kate
+        postman
+        kbibtex
+        libreoffice-qt-fresh
+        hunspell
+        hunspellDicts.de_DE
+        hunspellDicts.en_GB-ize
       ];
     };
   };
