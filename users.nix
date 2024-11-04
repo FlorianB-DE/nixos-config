@@ -34,10 +34,12 @@
         kdePackages.kate
         postman
         kbibtex
+        kdePackages.kcalc
         libreoffice-qt-fresh
         hunspell
         hunspellDicts.de_DE
         hunspellDicts.en_GB-ize
+        zotero
       ];
     };
   };

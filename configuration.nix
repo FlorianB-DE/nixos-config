@@ -129,6 +129,7 @@
     rustup
     appimage-run
     htop
+    openssl
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
