@@ -45,7 +45,7 @@
   };
 
   environment.interactiveShellInit = ''
-    alias n='nvim'
+    alias n='nvim'; alias yeet='git push'
   '';
 
   security.sudo.extraRules= [
