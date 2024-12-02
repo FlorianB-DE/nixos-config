@@ -11,6 +11,7 @@
       ./home-manager.nix
       ./users.nix
       ./system-libs.nix
+      # ./lutris.nix
     ];
 
   boot = {
@@ -93,7 +94,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  # sound.enable = true; redundant as of 24.11
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -130,6 +131,7 @@
     appimage-run
     htop
     openssl
+    vulkan-tools
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

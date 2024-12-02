@@ -40,6 +40,18 @@
         hunspellDicts.de_DE
         hunspellDicts.en_GB-ize
         zotero
+        # lutris
+        (lutris.override {
+          extraLibraries =  pkgs: [
+            # List library dependencies here
+          ];
+          extraPkgs = pkgs: [
+            wineWowPackages.full
+            wineWow64Packages.full
+            winetricks
+             # List package dependencies here
+          ];
+        })
       ];
     };
   };
