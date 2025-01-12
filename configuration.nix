@@ -151,6 +151,9 @@
   programs.ssh.startAgent = true;
 
   # List services that you want to enable:
+  
+  # libratbagd
+  services.ratbagd.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

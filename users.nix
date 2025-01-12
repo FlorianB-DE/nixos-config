@@ -5,6 +5,15 @@
 
 {
   users.users = {
+    jessica = {
+        isNormalUser = true;
+        home = "/home/jessica";
+        packages = with pkgs; [
+            librewolf
+            steam
+        ];    
+    };
+
     florian = {
       isNormalUser = true;
       home = "/home/florian";
@@ -40,6 +49,7 @@
         hunspellDicts.de_DE
         hunspellDicts.en_GB-ize
         zotero
+        piper
         # lutris
         (lutris.override {
           extraLibraries =  pkgs: [
