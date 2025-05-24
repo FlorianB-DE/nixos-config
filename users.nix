@@ -4,6 +4,9 @@
 { config, pkgs, home-manager, ... }:
 
 {
+
+  nix.settings.trusted-users = [ "@wheel" ];
+
   users.users = {
     jessica = {
         isNormalUser = true;
@@ -20,6 +23,7 @@
       extraGroups = [ "wheel" "networkmanager" "docker" "libvirtd" ];
 
       packages = with pkgs; [
+        rustdesk-flutter
         librewolf
         firefox
         libsForQt5.yakuake
@@ -50,6 +54,11 @@
         hunspellDicts.en_GB-ize
         zotero
         piper
+        teamspeak3
+        unetbootin
+        jetbrains.jdk
+        firefox-devedition
+	chromium
         # lutris
         (lutris.override {
           extraLibraries =  pkgs: [

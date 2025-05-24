@@ -76,6 +76,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.autoNumlock = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
   # Enable VNC
@@ -134,11 +135,26 @@
     vulkan-tools
   ];
 
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
+  programs.appimage.package = pkgs.appimage-run.override { extraPkgs = pkgs: [ pkgs.libthai pkgs.icu pkgs.icu.dev ]; };
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    icu
+  ];
 
   virtualisation.docker.enable = true;
+
+  hardware.nvidia-container-toolkit.enable = true;
+
+  # Regular Docker
+  virtualisation.docker.daemon.settings.features.cdi = true;
+  # Rootless
+  # virtualisation.docker.rootless.daemon.settings.features.cdi = true;
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -164,6 +180,13 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  environment.etc."inputrc" = {
+  text = pkgs.lib.mkDefault( pkgs.lib.mkAfter ''
+      #  activate strg + backspace word deletion
+      "\C-h": backward-kill-word
+      '');
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
