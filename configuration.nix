@@ -133,6 +133,7 @@
     htop
     openssl
     vulkan-tools
+    nixfmt-rfc-style
   ];
 
   programs.appimage.enable = true;

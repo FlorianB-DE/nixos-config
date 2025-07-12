@@ -6,21 +6,13 @@
 {
 
   nix.settings.trusted-users = [ "@wheel" ];
-
+  users.groups.dev = {};
   users.users = {
-    jessica = {
-        isNormalUser = true;
-        home = "/home/jessica";
-        packages = with pkgs; [
-            librewolf
-            steam
-        ];    
-    };
 
     florian = {
       isNormalUser = true;
       home = "/home/florian";
-      extraGroups = [ "wheel" "networkmanager" "docker" "libvirtd" ];
+      extraGroups = [ "wheel" "networkmanager" "docker" "libvirtd" "dev" ];
 
       packages = with pkgs; [
         rustdesk-flutter
@@ -58,7 +50,8 @@
         unetbootin
         jetbrains.jdk
         firefox-devedition
-	chromium
+	    chromium
+        inkscape
         # lutris
         (lutris.override {
           extraLibraries =  pkgs: [
